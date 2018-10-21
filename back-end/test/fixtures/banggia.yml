@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sanpham: one
+  thoidiem: MyString
+  string: MyString
+  gia: 9.99
+
+two:
+  sanpham: two
+  thoidiem: MyString
+  string: MyString
+  gia: 9.99

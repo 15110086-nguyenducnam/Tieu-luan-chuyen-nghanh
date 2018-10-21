@@ -1,0 +1,2 @@
+class Nhacc < ApplicationRecord
+end

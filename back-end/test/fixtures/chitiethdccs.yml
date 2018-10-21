@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  soluong: 1
+  dongia: 
+  dongia: 
+  hopdongcc: one
+  sanpham: one
+
+two:
+  soluong: 1
+  dongia: 
+  dongia: 
+  hopdongcc: two
+  sanpham: two

@@ -1,0 +1,2 @@
+class Loaikh < ApplicationRecord
+end

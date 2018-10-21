@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ho: MyString
+  ten: 
+  loaikh: one
+
+two:
+  ho: MyString
+  ten: 
+  loaikh: two
