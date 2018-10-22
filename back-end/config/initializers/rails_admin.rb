@@ -38,15 +38,50 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  # config.model 'Chitiethopdongcc' do
+  #   label 'Chi tiet hop dong' # Change the label of this model class
+  #   field :id
+  #   field :soluong do
+  #     label 'So luong'
+  #   end
+  #   field :dongia do
+  #     label '' # Change the label of this field
+  #   end
+  # end
+  # config.model 'sanpham' do
+  #   label 'Item' # Change the label of this model class
+  #   field :id
+  #   # field :design_code
+  #   # field :brand do
+  #   #   label 'Company' # Change the label of this field
+  #   # end
+  #   # field :is_hidden
+  #   # field :filename
+  # end
+  config.main_app_name = ["Zeli", "Admin"]
   
-  config.model 'Chitiethopdongcc' do
-  label 'Chi tiet hop dong' # Change the label of this model class
-  field :id
-  field :soluong do
-    label 'so luong'
+  config.model 'Chitiethdccs' do
+    label "fsfsdfs"
+    label_plural "Chi tiết hợp đồng cung cấp"
   end
-  field :dongia do
-    label 'Don gia' # Change the label of this field
+
+  config.model 'Admin' do
+    label "Tài khoản"
+    label_plural "Admin"
   end
-end
+
+
+  config.model 'Chitietdhmuahangs' do
+    label "Hợp đồng"
+    label_plural "Chi tiết hợp đồng mua hàng"
+  end
+  #
+  # config.model 'Banggia' do
+  #   label ""
+  #   label_plural "Bảng giá"
+  # end
+  config.model 'Admin' do
+    visible false
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_064150) do
+ActiveRecord::Schema.define(version: 2018_10_22_030418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,12 @@ ActiveRecord::Schema.define(version: 2018_10_20_064150) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "banggias", force: :cascade do |t|
-    t.bigint "sanpham_id"
-    t.string "thoidiem"
-    t.string "string"
+  create_table "banggia", force: :cascade do |t|
     t.decimal "gia"
+    t.bigint "sanpham_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sanpham_id"], name: "index_banggias_on_sanpham_id"
+    t.index ["sanpham_id"], name: "index_banggia_on_sanpham_id"
   end
 
   create_table "chitiethdccs", force: :cascade do |t|
@@ -49,18 +47,18 @@ ActiveRecord::Schema.define(version: 2018_10_20_064150) do
   end
 
   create_table "chitiethdmuahangs", force: :cascade do |t|
-    t.integer "sonluong"
+    t.float "soluong"
     t.decimal "dongia"
+    t.bigint "sanpham_id"
     t.bigint "hopdongmuahang_id"
-    t.bigint "chitiethdcc_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chitiethdcc_id"], name: "index_chitiethdmuahangs_on_chitiethdcc_id"
     t.index ["hopdongmuahang_id"], name: "index_chitiethdmuahangs_on_hopdongmuahang_id"
+    t.index ["sanpham_id"], name: "index_chitiethdmuahangs_on_sanpham_id"
   end
 
   create_table "hopdongccs", force: :cascade do |t|
-    t.boolean "trangthaidh"
+    t.integer "trangthaihd"
     t.bigint "nhacc_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -69,19 +67,19 @@ ActiveRecord::Schema.define(version: 2018_10_20_064150) do
 
   create_table "hopdongmuahangs", force: :cascade do |t|
     t.integer "trangthaihd"
-    t.bigint "khachang_id"
+    t.bigint "khachhang_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["khachang_id"], name: "index_hopdongmuahangs_on_khachang_id"
+    t.index ["khachhang_id"], name: "index_hopdongmuahangs_on_khachhang_id"
   end
 
-  create_table "khachangs", force: :cascade do |t|
+  create_table "khachhangs", force: :cascade do |t|
     t.string "ho"
     t.string "ten"
     t.bigint "loaikh_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["loaikh_id"], name: "index_khachangs_on_loaikh_id"
+    t.index ["loaikh_id"], name: "index_khachhangs_on_loaikh_id"
   end
 
   create_table "loaikhs", force: :cascade do |t|
@@ -93,13 +91,12 @@ ActiveRecord::Schema.define(version: 2018_10_20_064150) do
 
   create_table "loaisps", force: :cascade do |t|
     t.string "ten"
-    t.string "sp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "nhaccs", force: :cascade do |t|
-    t.string "ten"
+    t.string "tennhacc"
     t.string "diachi"
     t.integer "sdt"
     t.datetime "created_at", null: false
@@ -107,19 +104,20 @@ ActiveRecord::Schema.define(version: 2018_10_20_064150) do
   end
 
   create_table "sanphams", force: :cascade do |t|
-    t.string "tensanpham"
+    t.string "tensp"
     t.bigint "loaisp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["loaisp_id"], name: "index_sanphams_on_loaisp_id"
   end
 
-  add_foreign_key "banggias", "sanphams"
+  add_foreign_key "banggia", "sanphams"
   add_foreign_key "chitiethdccs", "hopdongccs"
   add_foreign_key "chitiethdccs", "sanphams"
-  add_foreign_key "chitiethdmuahangs", "chitiethdccs"
+  add_foreign_key "chitiethdmuahangs", "hopdongmuahangs"
+  add_foreign_key "chitiethdmuahangs", "sanphams"
   add_foreign_key "hopdongccs", "nhaccs"
-  add_foreign_key "hopdongmuahangs", "khachangs"
-  add_foreign_key "khachangs", "loaikhs"
+  add_foreign_key "hopdongmuahangs", "khachhangs"
+  add_foreign_key "khachhangs", "loaikhs"
   add_foreign_key "sanphams", "loaisps"
 end

@@ -2,8 +2,6 @@
 
 one:
   ten: MyString
-  sp: MyString
 
 two:
   ten: MyString
-  sp: MyString

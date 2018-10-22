@@ -2,10 +2,10 @@
 
 one:
   ho: MyString
-  ten: 
+  ten: MyString
   loaikh: one
 
 two:
   ho: MyString
-  ten: 
+  ten: MyString
   loaikh: two

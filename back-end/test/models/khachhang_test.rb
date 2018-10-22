@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class KhachangTest < ActiveSupport::TestCase
+class KhachhangTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

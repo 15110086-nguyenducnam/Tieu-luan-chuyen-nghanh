@@ -2,14 +2,12 @@
 
 one:
   soluong: 1
-  dongia: 
-  dongia: 
+  dongia: 9.99
   hopdongcc: one
   sanpham: one
 
 two:
   soluong: 1
-  dongia: 
-  dongia: 
+  dongia: 9.99
   hopdongcc: two
   sanpham: two
