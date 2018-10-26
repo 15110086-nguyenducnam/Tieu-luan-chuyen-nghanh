@@ -1,6 +1,10 @@
 class Nhacc < ApplicationRecord
-  has_many :hopdongcc
+  has_many :hopdongcc, inverse_of: :nhacc
 
+  # method
+  def display_name
+    "#{self.tennhacc}"
+  end
   rails_admin do
     label_plural "Nhà cung cấp"
       field :id do

@@ -15,6 +15,9 @@ class Chitiethdmuahang < ApplicationRecord
     end
     field :sanpham do
       label "Sản phẩm"
+      # enum do
+      #   Sanpham.all.collect {|p| [p.tensp, p]}
+      # end
     end
     field :hopdongmuahang do
       label "Hợp đồng mua hàng"

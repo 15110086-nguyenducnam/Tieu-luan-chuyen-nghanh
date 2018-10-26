@@ -1,6 +1,10 @@
 class Loaikh < ApplicationRecord
-  has_many :khachhangs
+  has_many :khachhangs, :inverse_of => :loaikh
 
+  # method
+  def display_name
+    "#{self.tenloaikh}"
+  end
   rails_admin do
     label_plural "Loại khách hàng"
     field :id do

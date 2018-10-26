@@ -1,5 +1,5 @@
 class Khachhang < ApplicationRecord
-  belongs_to :loaikh
+  belongs_to :loaikh, inverse_of: :khachhangs
   has_many :hopdongmuahangs
 
   rails_admin do
@@ -23,4 +23,5 @@ class Khachhang < ApplicationRecord
       read_only true
     end
   end
+  
 end

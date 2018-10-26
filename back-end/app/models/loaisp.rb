@@ -1,5 +1,9 @@
 class Loaisp < ApplicationRecord
-  has_many :sanphams
+  has_many :sanphams, inverse_of: :loaisp
+
+  def display_name
+    "#{self.ten}"
+  end
   rails_admin do
     label_plural "Loại sản phẩm"
     field :id do
@@ -10,6 +14,9 @@ class Loaisp < ApplicationRecord
     end
     field :sanphams do
       label "Sản phẩm"
+      #  enum do
+      #   self.sanphams.collect {|p| [p.ten, p.id]}
+      # end
     end
     field :created_at do
       read_only true

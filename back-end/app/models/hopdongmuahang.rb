@@ -1,8 +1,12 @@
 class Hopdongmuahang < ApplicationRecord
   belongs_to :khachhang
-  has_many :chitiethdmuahangs
+  has_many :chitiethdmuahangs, inverse_of: :hopdongmuahang
   has_many :sanphams, through: :chitiethdmuahangs
 
+  # method
+  def display_name
+    "#{self.trangthaihd}"
+  end
   rails_admin do
     label_plural "Hợp đồng mua hàng"
     field :id do

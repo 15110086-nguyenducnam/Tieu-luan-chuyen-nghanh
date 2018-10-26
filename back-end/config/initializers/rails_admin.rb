@@ -59,23 +59,23 @@ RailsAdmin.config do |config|
   #   # field :is_hidden
   #   # field :filename
   # end
-  config.main_app_name = ["Zeli", "Admin"]
-  
+  config.main_app_name = ["Zeny", "Admin"]
+  config.label_methods.unshift(:display_name)
   config.model 'Chitiethdccs' do
     label "fsfsdfs"
     label_plural "Chi tiết hợp đồng cung cấp"
   end
 
-  config.model 'Admin' do
-    label "Tài khoản"
-    label_plural "Admin"
-  end
+  # config.model 'Admin' do
+  #   label "Tài khoản"
+  #   label_plural "Admin"
+  # end
 
 
-  config.model 'Chitietdhmuahangs' do
-    label "Hợp đồng"
-    label_plural "Chi tiết hợp đồng mua hàng"
-  end
+  # config.model 'Chitietdhmuahangs' do
+  #   label "Hợp đồng"
+  #   label_plural "Chi tiết hợp đồng mua hàng"
+  # end
   #
   # config.model 'Banggia' do
   #   label ""

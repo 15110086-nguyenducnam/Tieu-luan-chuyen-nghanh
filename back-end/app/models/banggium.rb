@@ -10,7 +10,7 @@ class Banggium < ApplicationRecord
     field :gia do
       label "Giá"
     end
-    field :sanpham_id do
+    field :sanpham do
       label "Sản phẩm"
     end
     field :created_at do
