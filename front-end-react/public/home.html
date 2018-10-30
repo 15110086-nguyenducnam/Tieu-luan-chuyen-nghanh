@@ -1,31 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <link rel="stylesheet" href='./css/home.css' >
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <title>Zeni</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
     <script type="text/javascript" src="./slick/slick.min.js"></script>
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href='./css/home.css' >
+    </head>
+    <body>
+    <!-- header -->
     <div class="container" style="margin-top:5px;">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a href="#">
-                <img src='./images/logo.png' style="width:50px;height:70px;"/>
+              <img src='./images/logo.png' style="width:50px;height:70px;"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="navbar-collapse collapse" id="collapsingNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item" id="search_form">
@@ -51,231 +49,248 @@
             <img src='./images/homepage.png' class="img-fluid"/>
         </a>
     </center>
-    <div class="">
+    <!-- //header -->
+    <div class="parent_body">
+      <!-- mua theo danh muc -->
+      <div class="container category c_parent_body">
+        <div class="header-label">
+          <center>
+            <h4>Mua theo Danh Mục</h4>
+          </center>
+        </div>
+        <div class="row row-item">
+          <div class="col-2">
+            <center>
+              <a href="#">
+                <img src="./images/thoitrang.jpg" class="img-fluid" />
+              </a>
+              <h6>Thời trang</h6>
+            </center>
+          </div>
+          <div class="col-2">
+            <center>
+              <a href="#">
+                <img src="./images/tuixach&giaydep.jpg" class="img-fluid" />
+              </a>
+              <h6>Túi xách & Giày dép</h6>
+            </center>
+          </div>
+          <div class="col-2">
+            <center>
+              <a href="#">
+                <img src="./images/phukien.jpg" class="img-fluid" />
+              </a>
+              <h6>Phụ kiện</h6>
+            </center>
+          </div>
+          <div class="col-2">
+            <center>
+              <a href="#">
+                <img src="./images/suckhoe&lamdep.jpg" class="img-fluid" />
+              </a>
+              <h6>Sức khỏe & Làm đẹp</h6>
+            </center>
+          </div>
+          <div class="col-2">
+            <center>
+              <a href="#">
+                <img src="./images/nhacua&doisong.jpg" class="img-fluid" />
+              </a>
+              <h6>Nhà cửa & Đời sống</h6>
+            </center>
+          </div>
+          <div class=" col-2">
+            <center>
+              <a href="#">
+                <img src="./images/hangnhapkhau.jpg" class="img-fluid" />
+              </a>
+              <h6>Hàng nhập khẩu</h6>
+            </center>
+          </div>
+        </div>
+      </div>
+      <!-- // mua theo danh muc -->
+    </div>
+    
+    <div class="container category" >
+      <div class="header-label">
         <center><h4>Ưu Đãi Mới Nhất</h4></center>
-        <div class="row">
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/Tefal.jpg" class="img-fluid"/>
-                </a>
-                <center><h6>Đến 59% - Tefal Đồ Giảm Gia Dụng Hiện Đại</h6></center>
-            </div>
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/Gucci.jpg" class="img-fluid"/>
-                </a>
-                <center><h6>Gucci, Kenzo, Prada,... </h6></center>
-            </div>
+      </div>
+      <div class="row row-item">
+        <div class="col-md-6">
+          <a href="#">
+            <img src="./images/oppo.jpg" class="img-fluid"/>
+          </a>
+          <h6>Điện thoại Oppo</h6>
+          <h6>Còn 7 ngày</h6>
         </div>
-    </div>
-    <div class="container">
-        <center><h4>Mua theo Danh Mục</h4></center>
-        <div class="row">
-            <div class="col-2">
-                <center>
-                    <a href="#">
-                        <img src="./images/thoitrang.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Thời trang</h6>
-                </center>
-            </div>
-            <div class="col-2">
-                <center>
-                    <a href="#">
-                        <img src="./images/tuixach&giaydep.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Túi xách & Giày dép</h6>
-                </center>
-            </div>
-            <div class="col-2">
-                <center>
-                    <a href="#">
-                        <img src="./images/phukien.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Phụ kiện</h6>
-                </center>
-            </div>
-            <div class="col-2">
-                <center>
-                    <a href="#">
-                        <img src="./images/suckhoe&lamdep.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Sức khỏe & Làm đẹp</h6>
-                </center>
-            </div>
-            <div class="col-2">
-                <center>
-                    <a href="#">
-                        <img src="./images/nhacua&doisong.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Nhà cửa & Đời sống</h6>
-                </center>
-            </div>
-            <div class=" col-2">
-                <center>
-                    <a href="#">
-                        <img src="./images/hangnhapkhau.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Hàng nhập khẩu</h6>
-                </center>
-            </div>
+        <div class="col-md-6">
+          <a href="#">
+            <img src="./images/huawei.jpg" class="img-fluid"/>
+          </a>
+          <h6>Điện thoại Huawei</h6>
+          <h6>Còn 7 ngày</h6>
         </div>
-    </div>
-    <div class="container">
-        <center>
+      </div>
+      <div class="row row-item">
+        <div class="col-md-6">
+          <a href="#">
+              <img src="./images/oppo.jpg" class="img-fluid"/>
+          </a>
+          <h6>Điện thoại Oppo</h6>
+          <h6>Còn 7 ngày</h6>
+        </div>
+        <div class="col-md-6">
             <a href="#">
-                <img src="./images/homepage1.png" class="img-fluid"/>
+                <img src="./images/huawei.jpg" class="img-fluid"/>
             </a>
-        </center>
+            <h6>Điện thoại Huawei</h6>
+            <h6>Còn 7 ngày</h6>
+        </div>
+      </div>
+      <div class="row row-item">
+        <div class="col-md-6">
+          <a href="#">
+              <img src="./images/oppo.jpg" class="img-fluid"/>
+          </a>
+          <h6>Điện thoại Oppo</h6>
+          <h6>Còn 7 ngày</h6>
+        </div>
+        <div class="col-md-6">
+          <a href="#">
+              <img src="./images/huawei.jpg" class="img-fluid"/>
+          </a>
+          <h6>Điện thoại Huawei</h6>
+          <h6>Còn 7 ngày</h6>
+        </div>
+      </div>
+      <div class="row row-item">
+        <div class="col-md-6">
+          <a href="#">
+              <img src="./images/oppo.jpg" class="img-fluid"/>
+          </a>
+          <h6>Điện thoại Oppo</h6>
+          <h6>Còn 7 ngày</h6>
+        </div>
+        <div class="col-md-6">
+            <a href="#">
+                <img src="./images/huawei.jpg" class="img-fluid"/>
+            </a>
+            <h6>Điện thoại Huawei</h6>
+            <h6>Còn 7 ngày</h6>
+        </div>
+      </div>
     </div>
-    <div class="container">
-        <center><h4>Ưu Đãi Mới Nhất</h4></center>
-        <div class="row">
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/oppo.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Oppo</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/oppo.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Oppo</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/oppo.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Oppo</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/oppo.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Oppo</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-6">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-        </div>
-    </div>
-    <div class="container">
+    <!-- // uu dai moi nhat -->
+    <!-- ban chay nhat -->
+    <div class="container category">
+      <div class="header-label">
         <center><h4>Bán chạy nhất trong ngày</h4></center>
-
-        <div class="list" >
+      </div>
+      <div class="show-list-banchay row-item">
+        <div class="list row-item" >
             <div>
-                <a href="#">
-                    <img src="./images/loa.jpg"/>
-                </a>
+              <a href="#">
+                  <img src="./images/loa.jpg"/>
+              </a>
             </div>
             <div>
-                <a href="#">
-                    <img src="./images/loa.jpg"/>
-                </a>
+              <a href="#">
+                  <img src="./images/loa.jpg"/>
+              </a>
             </div>
             <div>
-                <a href="#">
-                    <img src="./images/loa.jpg"/>
-                </a>
+              <a href="#">
+                  <img src="./images/loa.jpg"/>
+              </a>
             </div>
             <div>
-                <a href="#">
-                    <img src="./images/loa.jpg"/>
-                </a>
+              <a href="#">
+                  <img src="./images/loa.jpg"/>
+              </a>
             </div>
             <div>
-                <a href="#">
-                    <img src="./images/loa.jpg"/>
-                </a>
+              <a href="#">
+                  <img src="./images/loa.jpg"/>
+              </a>
             </div>
         </div>
+      </div>
     </div>
     <hr>
-
-    <div class="container">
+    <!-- //ban chay  nhat -->
+    <!-- noi bat tu thoi trang -->
+    <div class="container category">
+      <div class="header-label">
         <center><h4>Nổi Bật từ Thời Trang</h4></center>
-        <center><a class="text-no-underline" href="#">Xem Tất Cả (14) ></a></center>
-        <div class="row">
-            <div class="col-4">
+      </div>
+      <center><a class="text-no-underline" href="#">Xem Tất Cả (14) ></a></center>
+        <div class="row row-item" >
+            <div class="col-md-6">
                 <a href="#">
                     <img src="./images/oppo.jpg" class="img-fluid"/>
                 </a>
                 <h6>Điện thoại Oppo</h6>
                 <h6>Còn 7 ngày</h6>
             </div>
-            <div class="col-4">
+            <div class="col-md-6">
                 <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
+                    <img src="./images/oppo.jpg" class="img-fluid"/>
                 </a>
                 <h6>Điện thoại Huawei</h6>
                 <h6>Còn 7 ngày</h6>
             </div>
         </div>
+        <div class="row row-item">
+          <div class="col-md-6">
+            <a href="#">
+              <img src="./images/oppo.jpg" class="img-fluid" />
+            </a>
+            <h6>Điện thoại Oppo</h6>
+            <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-md-6">
+            <a href="#">
+              <img src="./images/huawei.jpg" class="img-fluid" />
+            </a>
+            <h6>Điện thoại Huawei</h6>
+            <h6>Còn 7 ngày</h6>
+          </div>
+        </div>
+          <div class="row row-item">
+            <div class="col-md-6">
+              <a href="#">
+                <img src="./images/oppo.jpg" class="img-fluid" />
+              </a>
+              <h6>Điện thoại Oppo</h6>
+              <h6>Còn 7 ngày</h6>
+            </div>
+            <div class="col-md-6">
+              <a href="#">
+                <img src="./images/huawei.jpg" class="img-fluid" />
+              </a>
+              <h6>Điện thoại Huawei</h6>
+              <h6>Còn 7 ngày</h6>
+            </div>
+          </div>
     </div>
     <br>
-
-    <div class="container">
+    <!-- // noi bat tu thoi trang -->
+    <!-- noi bat tui giay dep -->
+    <div class="container category">
+      <div class="header-label">
         <center><h4>Nổi Bật từ Túi Xách & Giày Dép</h4></center>
+      </div>
         <center><a class="text-no-underline" href="#">Xem Tất Cả (20) ></a></center>
-        <div class="row">
-            <div class="col-4">
+        <div class="row row-item">
+            <div class="col-md-6">
                 <a href="#">
                     <img src="./images/oppo.jpg" class="img-fluid"/>
                 </a>
                 <h6>Điện thoại Oppo</h6>
                 <h6>Còn 7 ngày</h6>
             </div>
-            <div class="col-4">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-4">
+            <div class="col-md-6">
                 <a href="#">
                     <img src="./images/huawei.jpg" class="img-fluid"/>
                 </a>
@@ -283,28 +298,40 @@
                 <h6>Còn 7 ngày</h6>
             </div>
         </div>
+        <div class="row row-item">
+          <div class="col-md-6">
+            <a href="#">
+              <img src="./images/oppo.jpg" class="img-fluid" />
+            </a>
+            <h6>Điện thoại Oppo</h6>
+            <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-md-6">
+            <a href="#">
+              <img src="./images/huawei.jpg" class="img-fluid" />
+            </a>
+            <h6>Điện thoại Huawei</h6>
+            <h6>Còn 7 ngày</h6>
+          </div>
+        </div>
     </div>
     <br>
-
-    <div class="container">
+    <!-- // noi bat giay dep -->
+    <!-- noi bat tu phu kien -->
+    <div class="container category">
+      <div class="header-label">
         <center><h4>Nổi Bật từ Phụ Kiện</h4></center>
+      </div>
         <center><a class="text-no-underline" href="#">Xem Tất Cả (28) ></a></center>
-        <div class="row">
-            <div class="col-4">
+        <div class="row row-item">
+            <div class="col-md-6">
                 <a href="#">
                     <img src="./images/oppo.jpg" class="img-fluid"/>
                 </a>
                 <h6>Điện thoại Oppo</h6>
                 <h6>Còn 7 ngày</h6>
             </div>
-            <div class="col-4">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-4">
+            <div class="col-md-6">
                 <a href="#">
                     <img src="./images/huawei.jpg" class="img-fluid"/>
                 </a>
@@ -314,26 +341,22 @@
         </div>
     </div>
     <br>
-
-    <div class="container">
+    <!-- //noi bat tu phu kien -->
+    <!-- noi bat tu suc khoe lam dep -->
+    <div class="container category">
+      <div class="header-label">
         <center><h4>Nổi Bật từ Sức Khoẻ & Làm Đẹp</h4></center>
+      </div>
         <center><a class="text-no-underline" href="#">Xem Tất Cả (38) ></a></center>
-        <div class="row">
-            <div class="col-4">
+        <div class="row row-item">
+            <div class="col-md-6">
                 <a href="#">
                     <img src="./images/oppo.jpg" class="img-fluid"/>
                 </a>
                 <h6>Điện thoại Oppo</h6>
                 <h6>Còn 7 ngày</h6>
             </div>
-            <div class="col-4">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-4">
+            <div class="col-md-6">
                 <a href="#">
                     <img src="./images/huawei.jpg" class="img-fluid"/>
                 </a>
@@ -341,128 +364,161 @@
                 <h6>Còn 7 ngày</h6>
             </div>
         </div>
-    </div>
-    <br>
-
-    <div class="container">
-        <center><h4>Nổi Bật từ Nhà Cửa & Đời sống</h4></center>
-        <center><a class="text-no-underline" href="#">Xem Tất Cả (41) ></a></center>
-        <div class="row">
-            <div class="col-4">
-                <a href="#">
-                    <img src="./images/oppo.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Oppo</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <img src="./images/huawei.jpg" class="img-fluid"/>
-                </a>
-                <h6>Điện thoại Huawei</h6>
-                <h6>Còn 7 ngày</h6>
-            </div>
+        <div class="row row-item">
+          <div class="col-md-6">
+            <a href="#">
+              <img src="./images/oppo.jpg" class="img-fluid" />
+            </a>
+            <h6>Điện thoại Oppo</h6>
+            <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-md-6">
+            <a href="#">
+              <img src="./images/huawei.jpg" class="img-fluid" />
+            </a>
+            <h6>Điện thoại Huawei</h6>
+            <h6>Còn 7 ngày</h6>
+          </div>
         </div>
     </div>
     <br>
-
-    <div class="container">
-            <center><h4>Sắp Diễn Ra</h4></center>
-            <center>
-                <span class="event">Ngày mai</span>
-                <span class="event">Th3 16/10</span>
-                <span class="event">Th4 17/10</span>
-            </center>
-            <div class="row">
-                <div class="col-3">
-                    <a href="#">
-                        <img src="./images/oppo.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Điện thoại Oppo</h6>
-                    <h6>Còn 7 ngày</h6>
-                </div>
-                <div class="col-3">
-                    <a href="#">
-                        <img src="./images/huawei.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Điện thoại Huawei</h6>
-                    <h6>Còn 7 ngày</h6>
-                </div>
-                <div class="col-3">
-                    <a href="#">
-                        <img src="./images/huawei.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Điện thoại Huawei</h6>
-                    <h6>Còn 7 ngày</h6>
-                </div>
-                <div class="col-3">
-                    <a href="#">
-                        <img src="./images/huawei.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Điện thoại Huawei</h6>
-                    <h6>Còn 7 ngày</h6>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <a href="#">
-                        <img src="./images/oppo.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Điện thoại Oppo</h6>
-                    <h6>Còn 7 ngày</h6>
-                </div>
-                <div class="col-3">
-                    <a href="#">
-                        <img src="./images/huawei.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Điện thoại Huawei</h6>
-                    <h6>Còn 7 ngày</h6>
-                </div>
-                <div class="col-3">
-                    <a href="#">
-                        <img src="./images/huawei.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Điện thoại Huawei</h6>
-                    <h6>Còn 7 ngày</h6>
-                </div>
-                <div class="col-3">
-                    <a href="#">
-                        <img src="./images/huawei.jpg" class="img-fluid"/>
-                    </a>
-                    <h6>Điện thoại Huawei</h6>
-                    <h6>Còn 7 ngày</h6>
-                </div>
-            </div>
+    <!-- // noi bat tu suc khoe lam dep -->
+    <!-- noi bat tu nha cua doi song -->
+    <div class="container category">
+      <div class="header-label">
+          <center><h4>Nổi Bật từ Nhà Cửa & Đời sống</h4></center>
+      </div>
+      <center><a class="text-no-underline" href="#">Xem Tất Cả (41) ></a></center>
+      <div class="row row-item">
+          <div class="col-md-6">
+              <a href="#">
+                  <img src="./images/oppo.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Oppo</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-md-6">
+              <a href="#">
+                  <img src="./images/huawei.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Huawei</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+      </div>
+        <div class="row row-item">
+          <div class="col-md-6">
+            <a href="#">
+              <img src="./images/oppo.jpg" class="img-fluid" />
+            </a>
+            <h6>Điện thoại Oppo</h6>
+            <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-md-6">
+            <a href="#">
+              <img src="./images/huawei.jpg" class="img-fluid" />
+            </a>
+            <h6>Điện thoại Huawei</h6>
+            <h6>Còn 7 ngày</h6>
+          </div>
+        </div>
     </div>
+    <br>
+    <!-- // noi bat tu nha cua doi song -->
+    <!-- sap dien ra -->
+
+    <div class="container category">
+      <div class="header-label">
+        <center><h4>Sắp Diễn Ra</h4></center>
+      </div>
+      <center>
+          <span class="event">Ngày mai</span>
+          <span class="event">Th3 16/10</span>
+          <span class="event">Th4 17/10</span>
+      </center>
+      <div class="row row-item">
+          <div class="col-3">
+              <a href="#">
+                  <img src="./images/oppo.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Oppo</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-3">
+              <a href="#">
+                  <img src="./images/huawei.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Huawei</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-3">
+              <a href="#">
+                  <img src="./images/huawei.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Huawei</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-3">
+              <a href="#">
+                  <img src="./images/huawei.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Huawei</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+      </div>
+      <div class="row row-item">
+          <div class="col-3">
+              <a href="#">
+                  <img src="./images/oppo.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Oppo</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-3">
+              <a href="#">
+                  <img src="./images/huawei.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Huawei</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-3">
+              <a href="#">
+                  <img src="./images/huawei.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Huawei</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+          <div class="col-3">
+              <a href="#">
+                  <img src="./images/huawei.jpg" class="img-fluid"/>
+              </a>
+              <h6>Điện thoại Huawei</h6>
+              <h6>Còn 7 ngày</h6>
+          </div>
+      </div>
+    </div>
+    <!-- //sap dien ra -->
 
     <div class="jsx-350614096 subscribe-container sub-in-home"> 
-        <div class="jsx-350614096 container">
-            <div class="jsx-350614096 content-wrap">
-                <div class="jsx-350614096 title">
-                    <h3 class="jsx-350614096">Đăng ký ngay!</h3>
-                    <p class="jsx-350614096">Nhận bản tin từ Leflair mỗi ngày</p>
-                </div>
-                <form name="form" class="jsx-350614096 form">
-                    <div class="jsx-350614096 row">
-                        <div class="jsx-350614096 col-md-8 col-12 form-group mb-md-0 pl-md-0">
-                            <input name="email" placeholder="Email của bạn..." required="" class="jsx-350614096 form-control" type="email">
-                        </div><div class="jsx-350614096 col-md-4 col-12 form-group mb-md-0 pl-md-0 pr-md-0">
-                            <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+      <div class="jsx-350614096 container">
+          <div class="jsx-350614096 content-wrap">
+              <div class="jsx-350614096 title">
+                  <h3 class="jsx-350614096">Đăng ký ngay!</h3>
+                  <p class="jsx-350614096">Nhận bản tin từ Leflair mỗi ngày</p>
+              </div>
+              <form name="form" class="jsx-350614096 form">
+                  <div class="jsx-350614096 row">
+                      <div class="jsx-350614096 col-md-8 col-12 form-group mb-md-0 pl-md-0">
+                          <input name="email" placeholder="Email của bạn..." required="" class="jsx-350614096 form-control" type="email">
+                      </div><div class="jsx-350614096 col-md-4 col-12 form-group mb-md-0 pl-md-0 pr-md-0">
+                          <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
     </div>
-    
-    
+
+
     <div id="footer" class="jsx-1045551551 footer-section">
         <div class="jsx-1045551551 container">
             <div class="jsx-1045551551 upper">
@@ -586,9 +642,6 @@
             </div>
         </div>
     </div>
-
-
-    
     <script>
         $('.list').slick({
             dots: true,
@@ -628,5 +681,5 @@
             ]
         });
     </script>
-</body>
-</html>
+    </body>
+    </html>
