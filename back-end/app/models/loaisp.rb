@@ -1,5 +1,9 @@
 class Loaisp < ApplicationRecord
+  # association
   has_many :sanphams, inverse_of: :loaisp
+  
+  # validate
+  validates :ten, presence: true
 
   def display_name
     "#{self.ten}"

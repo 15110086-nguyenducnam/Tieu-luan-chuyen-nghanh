@@ -1,8 +1,13 @@
 class Hopdongmuahang < ApplicationRecord
+  # association
   belongs_to :khachhang
   has_many :chitiethdmuahangs, inverse_of: :hopdongmuahang
   has_many :sanphams, through: :chitiethdmuahangs
 
+  # validates
+  validates :khachhang, presence: true
+  validates :trangthaihd, presence: true, numericality: true
+  
   # method
   def display_name
     "#{self.trangthaihd}"
@@ -18,6 +23,7 @@ class Hopdongmuahang < ApplicationRecord
     field :khachhang do
       label "Khách hàng"
     end
+    field :chitiethdmuahangs
     field :created_at do
       read_only true
     end

@@ -1,7 +1,13 @@
 class Chitiethdmuahang < ApplicationRecord
+  # assosication
   belongs_to :sanpham
   belongs_to :hopdongmuahang
 
+  # validate
+  validates :sanpham, :hopdongmuahang, presence: true
+  validates :dongia, :dongia, presence: true, numericality: true
+
+  #rails admin 
   rails_admin do
     label_plural "Chi tiết hợp đồng mua hàng"
     field :id do

@@ -43,6 +43,15 @@ gem 'simple_form', '4.0.1'
 gem "font-awesome-rails"
 gem 'bootstrap-glyphicons'
 gem 'rails_admin'
+gem "paperclip"
+gem 'ckeditor'
+# API
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger',              '~> 0.26.1'
+gem 'grape-swagger-rails',        '~> 0.3.0'
+gem 'grape_on_rails_routes'
+# gem 'rails_admin_dropzone', '~> 1.0', '>= 1.0.8'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

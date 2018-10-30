@@ -1,6 +1,11 @@
 class Banggium < ApplicationRecord
+  # association
   belongs_to :sanpham
+  # validates
+  validates :gia, presence: true, numericality: true
+  validates :sanpham, presence: true
 
+  #rails_admin
   rails_admin do
     label_plural "Bảng giá"
     

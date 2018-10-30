@@ -38,50 +38,30 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  # config.excluded_models << Admin
 
-  # config.model 'Chitiethopdongcc' do
-  #   label 'Chi tiet hop dong' # Change the label of this model class
-  #   field :id
-  #   field :soluong do
-  #     label 'So luong'
-  #   end
-  #   field :dongia do
-  #     label '' # Change the label of this field
-  #   end
-  # end
-  # config.model 'sanpham' do
-  #   label 'Item' # Change the label of this model class
-  #   field :id
-  #   # field :design_code
-  #   # field :brand do
-  #   #   label 'Company' # Change the label of this field
-  #   # end
-  #   # field :is_hidden
-  #   # field :filename
-  # end
   config.main_app_name = ["Zeny", "Admin"]
   config.label_methods.unshift(:display_name)
   config.model 'Chitiethdccs' do
-    label "fsfsdfs"
     label_plural "Chi tiết hợp đồng cung cấp"
   end
 
-  # config.model 'Admin' do
-  #   label "Tài khoản"
-  #   label_plural "Admin"
-  # end
-
-
-  # config.model 'Chitietdhmuahangs' do
-  #   label "Hợp đồng"
-  #   label_plural "Chi tiết hợp đồng mua hàng"
-  # end
-  #
-  # config.model 'Banggia' do
-  #   label ""
-  #   label_plural "Bảng giá"
-  # end
   config.model 'Admin' do
+    visible false
+    field :email do
+      read_only true
+    end
+    field :password
+    field :password_confirmation
+    field :created_at do
+      read_only true
+    end
+    field :updated_at do
+      read_only true
+    end
+    # field :conf
+  end
+  config.model 'Photo' do
     visible false
   end
 end

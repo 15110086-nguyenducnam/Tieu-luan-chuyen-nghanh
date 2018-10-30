@@ -1,6 +1,9 @@
 class Nhacc < ApplicationRecord
+  # assosication
   has_many :hopdongcc, inverse_of: :nhacc
 
+  # validate
+  validates :tennhacc, :diachi, :sdt, presence: true
   # method
   def display_name
     "#{self.tennhacc}"

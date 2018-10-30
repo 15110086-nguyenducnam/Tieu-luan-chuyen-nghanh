@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_030418) do
+ActiveRecord::Schema.define(version: 2018_10_29_024959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2018_10_22_030418) do
     t.bigint "nhacc_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tenhdcc"
     t.index ["nhacc_id"], name: "index_hopdongccs_on_nhacc_id"
   end
 
@@ -79,6 +80,10 @@ ActiveRecord::Schema.define(version: 2018_10_22_030418) do
     t.bigint "loaikh_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.integer "sdt"
+    t.date "dateofbirth"
+    t.string "diachi"
     t.index ["loaikh_id"], name: "index_khachhangs_on_loaikh_id"
   end
 
@@ -103,11 +108,23 @@ ActiveRecord::Schema.define(version: 2018_10_22_030418) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.bigint "sanpham_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["sanpham_id"], name: "index_photos_on_sanpham_id"
+  end
+
   create_table "sanphams", force: :cascade do |t|
     t.string "tensp"
     t.bigint "loaisp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "mota"
     t.index ["loaisp_id"], name: "index_sanphams_on_loaisp_id"
   end
 
@@ -119,5 +136,6 @@ ActiveRecord::Schema.define(version: 2018_10_22_030418) do
   add_foreign_key "hopdongccs", "nhaccs"
   add_foreign_key "hopdongmuahangs", "khachhangs"
   add_foreign_key "khachhangs", "loaikhs"
+  add_foreign_key "photos", "sanphams"
   add_foreign_key "sanphams", "loaisps"
 end

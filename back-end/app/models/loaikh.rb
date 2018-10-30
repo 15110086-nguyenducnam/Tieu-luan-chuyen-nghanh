@@ -1,7 +1,11 @@
 class Loaikh < ApplicationRecord
+  # association
   has_many :khachhangs, :inverse_of => :loaikh
 
-  # method
+  # validation
+  validates :tenloaikh, presence: true
+  
+  # method 
   def display_name
     "#{self.tenloaikh}"
   end

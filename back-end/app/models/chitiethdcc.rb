@@ -1,7 +1,17 @@
 class Chitiethdcc < ApplicationRecord
+  # association
   belongs_to :hopdongcc
   belongs_to :sanpham
 
+  # validate
+  validates :soluong, :dongia, presence: true, numericality: true
+  # validates :hopdongcc, presence: true
+  validates :sanpham, presence: true
+
+  # rails_admin
+  # def display_name
+  #   "#{self.dongia}"
+  # end
   rails_admin do
     label_plural "Chi tiết hợp đồng cung cấp"
     
