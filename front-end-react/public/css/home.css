@@ -22,8 +22,8 @@ body {
 .row-item {
     padding: inherit;
 }
-.row .row-item img {
-   /* width: 100%; */
+.row-item img {
+   width: 100%;
 }
 .header-label h4 {
     font-size: 2rem;
@@ -44,6 +44,7 @@ body {
 }
 .show-list-banchay img {
     margin: auto;
+    padding-top: 30px;
 }
 .event{
     margin: 0px 7px;
