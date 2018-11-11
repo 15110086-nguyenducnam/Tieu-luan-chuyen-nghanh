@@ -1,0 +1,69 @@
+body {
+	background: #ffffff;
+	color: #4c5a5e;
+	font-family: 'Ubuntu', sans-serif;
+}
+.header-label h4 {
+	font-size: 2rem;
+}
+.logo img {
+	height: 200px;
+	width: 200px;
+}
+.img-fluid {
+	height: 70%;
+}
+.category {
+    padding-top: 30px;
+}
+.row-item {
+    padding: inherit;
+}
+
+.list-menu li {
+	font-size: 1.2em;
+	padding: 0 20px;
+}
+
+.product-pic img{
+	height: 400px;
+	width: 100%;
+}
+
+#price{
+	font-size: 20px;
+	font-weight: 500;
+	color: red;
+}
+#price2{
+	font-size: 15px;
+	font-weight: 500;
+	color: red;
+}
+
+.list-footer li, .list-footer a {
+	text-decoration: none;
+	padding: 0 10px;
+	color: black;
+}
+
+.list-product li, .list-product a{
+	text-decoration: none;
+	padding: 0 10px;
+	color: black;
+	font-size: 1em;
+}
+
+.product-right img{
+	height: 150px;
+	width: 150px;
+}
+
+.product-left img{
+	height: 300px;
+	width: 300px;
+}
+
+.image-product{
+	border: 1px solid grey;
+}

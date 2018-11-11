@@ -1,4 +1,5 @@
 export const HOME_URL = "/";
+export const FASHION_URL = "/fashion";
 export const LOGIN_URL = "/login";
 
 //Project pages
