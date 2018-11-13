@@ -29,7 +29,6 @@ class App extends Component {
                 { /**/}
                 <Switch>
                     <Route path={PATH.FASHION_URL} component={FashionPageContainer} />
-                    <Route path={PATH.HOME_URL} extact component={HomePageContainer} />
                 </Switch>
             </div>
             <Footer/>

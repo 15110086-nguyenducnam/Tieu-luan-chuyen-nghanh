@@ -11,7 +11,6 @@ body {
     color: #4c5a5e;
     font-family: 'Ubuntu', sans-serif;
 }
-
 .box {
     box-shadow: 0 5px 0 0 #fff, 0 0 13px 0 hsla(0,0%,74%,.3), inset 0 30px 0 0 #fff;
 }
