@@ -1,5 +1,4 @@
 ﻿import React from 'react';
-import cx from 'classnames';
 import './HomePage.css'
 import Category from './Category'
 import CategoryDetail from './CategoryDetail'

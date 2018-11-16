@@ -6,6 +6,8 @@ import Header from '../ui/containers/Header';
 import Footer from '../ui/containers/Footer';
 import HomePageContainer from '../ui/containers/HomePage/HomePage';
 import FashionPageContainer from '../ui/containers/FashionPage/FashionPage';
+import LoginPageContainer from '../ui/containers/UserPage/LoginPage';
+import RegisterPageContainer from '../ui/containers/UserPage/RegisterPage';
 
 class App extends Component {
   render() {
@@ -16,9 +18,9 @@ class App extends Component {
                 <section className="content-header">
                     
                     <Switch>
-                        <Route path={PATH.FASHION_URL} component={FashionPageContainer} />
+                        <Route path={PATH.LOGIN_URL} extact component={LoginPageContainer} />
+                        <Route path={PATH.REGISTER_URL} extact component={RegisterPageContainer} />
                         <Route path={PATH.HOME_URL} extact component={HomePageContainer} />
-                        <Route path={PATH.PROJECT_URL} extact render={ () => <h1>Project</h1>} />
                         <Route path={PATH.PROJECT_URL} extact render={ () => <h1>Project</h1>} />
                         <Route path={PATH.USERS_URL} extact render={ () => <h1>Users</h1>} />
                         <Route path={PATH.TEAM_URL} extact render={ () => <h1>Team</h1>} />
@@ -28,7 +30,6 @@ class App extends Component {
                 { /**/}
                 { /**/}
                 <Switch>
-                    <Route path={PATH.FASHION_URL} component={FashionPageContainer} />
                 </Switch>
             </div>
             <Footer/>

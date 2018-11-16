@@ -1,12 +1,14 @@
 ﻿import React from 'react';
+import { Link } from "react-router-dom";
+import * as PATH from '../../constants/routeConstants';
 
 const Header = props => {
     return (
         <div className="container" style={{marginTop:'5px'}}>
             <nav className="navbar navbar-expand-lg navbar-light">
-                <a href="#">
+                <Link to={PATH.HOME_URL}>
                     <img src='./images/logo.png' style={{width:"50px", height:"70px"}}/>
-                </a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -21,10 +23,10 @@ const Header = props => {
                     </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Đăng nhập</a>
+                            <Link className="nav-link" to={PATH.LOGIN_URL}>Đăng nhập</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Đăng xuất</a>
+                        <Link className="nav-link" to={PATH.REGISTER_URL}>Đăng ký</Link>
                         </li>
                     </ul>
                 </div>
