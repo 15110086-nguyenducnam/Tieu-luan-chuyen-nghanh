@@ -5,9 +5,10 @@ import * as PATH from '../constants/routeConstants';
 import Header from '../ui/containers/Header';
 import Footer from '../ui/containers/Footer';
 import HomePageContainer from '../ui/containers/HomePage/HomePage';
-import FashionPageContainer from '../ui/containers/FashionPage/FashionPage';
 import LoginPageContainer from '../ui/containers/UserPage/LoginPage';
 import RegisterPageContainer from '../ui/containers/UserPage/RegisterPage';
+import SalePageContainer from '../ui/containers/SalePage/SalePage';
+import DetailPageContainer from '../ui/containers/DetailPage/DetailPage'
 
 class App extends Component {
   render() {
@@ -20,15 +21,11 @@ class App extends Component {
                     <Switch>
                         <Route path={PATH.LOGIN_URL} extact component={LoginPageContainer} />
                         <Route path={PATH.REGISTER_URL} extact component={RegisterPageContainer} />
+                        <Route path={PATH.SALE_URL} extact component={SalePageContainer} />
+                        <Route path={PATH.PRODUCT_URL} extact component={DetailPageContainer} />
                         <Route path={PATH.HOME_URL} extact component={HomePageContainer} />
-                        <Route path={PATH.PROJECT_URL} extact render={ () => <h1>Project</h1>} />
-                        <Route path={PATH.USERS_URL} extact render={ () => <h1>Users</h1>} />
-                        <Route path={PATH.TEAM_URL} extact render={ () => <h1>Team</h1>} />
                     </Switch>
-                    
                 </section>
-                { /**/}
-                { /**/}
                 <Switch>
                 </Switch>
             </div>

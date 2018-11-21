@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import cx from 'classnames';
+import { Link } from "react-router-dom";
 
 class Category extends React.Component {
 
@@ -9,32 +10,38 @@ class Category extends React.Component {
             {
                 "id": 1,
                 "name": "Thời trang",
-                "img": "./images/thoitrang.jpg"
+                "img": "./images/thoitrang.jpg",
+                "url": "/sale/Fashion"
             },
             {
                 "id": 2,
                 "name": "Túi xách & Giày dép",
-                "img": "./images/tuixach&giaydep.jpg"
+                "img": "./images/tuixach&giaydep.jpg",
+                "url": "/sale/Handbags&Shoes"
             },
             {
                 "id": 3,
                 "name": "Phụ kiện",
-                "img": "./images/phukien.jpg"
+                "img": "./images/phukien.jpg",
+                "url": "/sale/accessories"
             },
             {
                 "id": 4,
                 "name": "Sức khỏe & Làm đẹp",
-                "img": "./images/suckhoe&lamdep.jpg"
+                "img": "./images/suckhoe&lamdep.jpg",
+                "url": "/sale/Health&Beauty"
             },
             {
                 "id": 5,
                 "name": "Nhà cửa & Đời sống",
-                "img": "./images/nhacua&doisong.jpg"
+                "img": "./images/nhacua&doisong.jpg",
+                "url": "/sale/Housing&Life"
             },
             {
                 "id": 6,
                 "name": "Hàng nhập khẩu",
-                "img": "./images/hangnhapkhau.jpg"
+                "img": "./images/hangnhapkhau.jpg",
+                "url": "/sale/ImportGoods"
             }
         ]   
     }
@@ -46,9 +53,9 @@ class Category extends React.Component {
                 children.push(
                     <div className={"col-2"} key={element["id"]}>
                         <center>
-                            <a href={""}>
+                            <Link to={element['url']}>
                                 <img src={require(`${element["img"]}`)} className={"img-fluid"} />
-                            </a>
+                            </Link>
                             <h6>{element["name"]}</h6>
                         </center>
                     </div>

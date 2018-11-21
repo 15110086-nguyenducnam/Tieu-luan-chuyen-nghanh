@@ -10,83 +10,9 @@ class HomePage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.newSalesList = [
-            {
-                "name": "Điện thoại Oppo",
-                "images": "./images/oppo.jpg",
-                "out_of_date": "Còn 7 ngày",
-                "url": " "
-            },
-            {
-                "name": "Điện thoại Huawei",
-                "images": "./images/huawei.jpg",
-                "out_of_date": "Còn 7 ngày",
-                "url": " "
-            },
-             {
-                "name": "Điện thoại Oppo",
-                "images": "./images/oppo.jpg",
-                "out_of_date": "Còn 7 ngày",
-                "url": " "
-            },
-            {
-                "name": "Điện thoại Huawei",
-                "images": "./images/huawei.jpg",
-                "out_of_date": "Còn 7 ngày",
-                "url": " "
-            },
-             {
-                "name": "Điện thoại Oppo",
-                "images": "./images/oppo.jpg",
-                "out_of_date": "Còn 7 ngày",
-                "url": " "
-            },
-            {
-                "name": "Điện thoại Huawei",
-                "images": "./images/huawei.jpg",
-                "out_of_date": "Còn 7 ngày",
-                "url": " "
-            },
-             {
-                "name": "Điện thoại Oppo",
-                "images": "./images/oppo.jpg",
-                "out_of_date": "Còn 7 ngày",
-                "url": " "
-            },
-            {
-                "name": "Điện thoại Huawei",
-                "images": "./images/huawei.jpg",
-                "out_of_date": "Còn 7 ngày",
-                "url": " "
-            }
-        ];
+        this.newSalesList = this.props.newSalesList;
 
-        this.bestSellerList = [
-            {
-                "images": "./images/loa.jpg",
-                "url": " "
-            },
-            {
-                "images": "./images/loa.jpg",
-                "url": " "
-            },
-            {
-                "images": "./images/loa.jpg",
-                "url": " "
-            },
-            {
-                "images": "./images/loa.jpg",
-                "url": " "
-            },
-            {
-                "images": "./images/loa.jpg",
-                "url": " "
-            },
-            {
-                "images": "./images/loa.jpg",
-                "url": " "
-            }
-        ]
+        this.bestSellerList = this.props.bestSellerList;
     }
 
     render() {

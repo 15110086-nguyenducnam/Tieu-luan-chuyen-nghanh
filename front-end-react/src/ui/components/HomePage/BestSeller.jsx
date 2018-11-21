@@ -13,18 +13,18 @@ class BestSeller extends React.Component {
     createItemList = () => {
         let children = [];
 
-       this.itemList.map(
-           (item, index) => {
-               children.push(
-                <div key={index}>
-                    <a href={''}>
-                        <img src={require(`${item['images']}`)}/>
-                    </a>
-                </div>
-               )
-           }
-       );
-       return children
+        this.itemList.map(
+            (item, index) => {
+                children.push(
+                    <div key={index}>
+                        <a href={''}>
+                            <img src={require(`${item['images']}`)}/>
+                        </a>
+                    </div>
+                )
+            }
+        );
+        return children
     }
 
     render() {

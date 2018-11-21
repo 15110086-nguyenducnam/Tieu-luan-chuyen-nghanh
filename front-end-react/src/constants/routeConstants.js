@@ -2,7 +2,8 @@ export const HOME_URL = "/";
 export const FASHION_URL = "/fashion";
 export const LOGIN_URL = "/login";
 export const REGISTER_URL = "/register";
-
+export const SALE_URL = "/sale/:category";
+export const PRODUCT_URL = "/product/:item";
 //Project pages
 export const PROJECT_URL = "/project";
 export const PROJECT_DASHBOARD_URL = "/project/dashboard";

@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import cx from 'classnames';
+import { Link } from "react-router-dom";
 
 class CategoryDetail extends React.Component {
     constructor(props){
@@ -10,9 +11,9 @@ class CategoryDetail extends React.Component {
     createIteamDetail = (item) => {
         return(
             <div className={"col-md-6"}>
-                <a href=" ">
+                <Link to={item["url"]}>
                     <img src={require(`${item["images"]}`)} className={"img-fluid"}/>
-                </a>
+                </Link>
                 <h6>{item["name"]}</h6>
                 <h6>{item["out_of_date"]}</h6>
             </div>
