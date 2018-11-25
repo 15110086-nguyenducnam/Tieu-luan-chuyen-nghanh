@@ -1,11 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
 import './style.css'
+import LeftDetail from './LeftDetail';
+import RightDetail from './RightDetail';
 
 class DetailPage extends React.Component {
     constructor(props) {
         super(props);
-        this.name = "Ưu đãi/ Guccii / Túi xách tay xanh"
+        this.linkName = "Ưu đãi/ Guccii / Túi xách tay xanh"
         this.image = "./images/product-back.jpg"
         this.logo = "./images/logo-small.jpg"
         this.slogan = "Ngày mai đã là quá khứ từ giờ"
@@ -20,120 +22,88 @@ class DetailPage extends React.Component {
         this.name = "Túi xách tay xanh"
         this.oldPrice = "2.500.000"
         this.price = "1.900.000"
+        this.sizeList = [
+            {
+                'name': 'XS',
+                'childern': [
+                    {
+                        'name': 'Size tướng ứng',
+                        'value': '32'
+                    },
+                    {
+                        'name': 'Vòng ngực(cm)',
+                        'value': '76 - 81'
+                    },
+                    {
+                        'name': 'Vòng eo(cm)',
+                        'value': '61 - 66'
+                    }
+                ]
+            },
+            {
+                'name': 'S',
+                'childern': [
+                    {
+                        'name': 'Size tướng ứng',
+                        'value': '32'
+                    },
+                    {
+                        'name': 'Vòng ngực(cm)',
+                        'value': '76 - 81'
+                    },
+                    {
+                        'name': 'Vòng eo(cm)',
+                        'value': '61 - 66'
+                    }
+                ]
+            },
+            {
+                'name': 'M',
+                'childern': [
+                    {
+                        'name': 'Size tướng ứng',
+                        'value': '32'
+                    },
+                    {
+                        'name': 'Vòng ngực(cm)',
+                        'value': '76 - 81'
+                    },
+                    {
+                        'name': 'Vòng eo(cm)',
+                        'value': '61 - 66'
+                    }
+                ]
+            },
+            {
+                'name': 'L',
+                'childern': null
+            }
+        ]
     }
 
     render() {
         return (
             <div className={"container"}>
-                <p>{this.name}</p>
+                <p>{this.linkName}</p>
                 <div className={cx("row", "mt-5")}>
                     <div className="col-md-7">
-                        <img src={require(`${this.image}`)} alt={"product"} style={{width: "530px:", height: "662px"}}/>
-                        <div className={cx("logo-branch", "mt-5")}>
-                            <img src={require(`${this.logo}`)} alt={"logo"}/>
-                        </div>
-                        <div className={cx("info", "pt-2")}>
-                            <p style={{"font-size": "1.5em"}}>"{this.slogan}"</p>
-                            <p>{this.description}</p>
-                        </div>
+                        <LeftDetail image={this.image} logo={this.logo} description={this.description} />
                     </div>
-                
-
                     <div className="col-md-5">
-                        <h4>{this.label}</h4>
-                        <h3>{this.name}</h3>
-                        <del>{this.oldPrice}đ</del>
-                        <span style={{color: "blue", "font-size": "1.5em"}}>{this.price}đ</span>
-                        <p>Kích cỡ</p>
-                        <div className="dropdown">
-                            <button className={cx("btn", "btn-outline-secondary", "btn-custom")}>XS</button>
-                            <div className={"dropdown-content"}>
-                                <table className={cx("table", "table-custom")}>
-                                    <p scope={"col"} className={"text-center"} style={{"font-size": "12px"}}><strong>Tương đương với</strong></p>
-                                    <tbody>
-                                        <tr>
-                                            <td>Size tướng ứng</td>
-                                            <td>32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Vòng ngực(cm)</td>
-                                            <td>76 - 81</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Vòng eo(cm)</td>
-                                            <td>61 - 66</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div className={"dropdown"}>
-                            <button className={cx("btn", "btn-outline-secondary", "btn-custom")}>S</button>
-                            <div className={"dropdown-content"}>
-                                <table className={cx("table", "table-custom")}>
-                                    <p scope={"col"} className={"text-center"} style={{"font-size": "12px"}}><strong>Tương đương với</strong></p>
-                                    <tbody>
-                                        <tr>
-                                            <td>Size tướng ứng</td>
-                                            <td>32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Vòng ngực(cm)</td>
-                                            <td>76 - 81</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Vòng eo(cm)</td>
-                                            <td>61 - 66</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div className={"dropdown"}>
-                            <button className={cx("btn", "btn-outline-secondary", "btn-custom")}>M</button>
-                            <div className={"dropdown-content"}>
-                                <table className={cx("table", "table-custom")}>
-                                    <p scope={"col"} className={"text-center"} style={{"font-size": "12px"}}><strong>Tương đương với</strong></p>
-                                    <tbody>
-                                        <tr>
-                                            <td>Size tướng ứng</td>
-                                            <td>32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Vòng ngực(cm)</td>
-                                            <td>76 - 81</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Vòng eo(cm)</td>
-                                            <td>61 - 66</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div className={"dropdown"}>
-                            <button className={cx("btn", "btn-outline-secondary", "btn-custom")} style={{"position": "relative", "background-color": "#d4e9f1"}}>L</button>
-                            <div className={"off-line"}></div>
-                            <div className={"dropdown-content"}>
-                                <table className={cx("table", "table-custom")}>
-                                    <p scope={"col"} className={"text-center"} style={{"font-size": "12px"}}><strong>Rất tiếc! Size này
-                                            đã hết hàng</strong></p>
-                                </table>
-                            </div>
-                        </div>
+                        <RightDetail label={this.label} name={this.name} oldPrice={this.oldPrice} price={this.price} sizeList={this.sizeList}/>
                     <div className={cx("add-button", "pt-4")}>
                         <button className={cx("btn", "btn-primary")}>Thêm vào giỏ hàng</button>
                     </div>
-                    <div className={"pt-2"} style={{"margin-left": "60px"}}>
+                    <div className={"pt-2"} style={{"marginLeft": "60px"}}>
                         <p>Ưu đãi này sẽ kết thúc trong:</p>
-                        <div style={{"margin-left": "15px"}}>
+                        <div style={{"marginLeft": "15px"}}>
                             <ul className={cx("list-inline", "count")}>
                                 <li className="list-inline-item">23</li>
                                 <li className="list-inline-item">14</li>
                                 <li className="list-inline-item">54</li>
                                 <li className="list-inline-item">12</li>
                             </ul>
-                            <ul className={"list-inline"} style={{"margin-top": "-10px"}}>
+                            <ul className={"list-inline"} style={{"marginTop": "-10px"}}>
                                 <li className="list-inline-item">Ngày</li>
                                 <li className="list-inline-item">Giờ</li>
                                 <li className="list-inline-item">Phút</li>
@@ -142,7 +112,7 @@ class DetailPage extends React.Component {
                         </div>
                     </div>
                     <div className={cx("icon-branch", "text-left")}>
-                        <ul style={{"list-style-type": "none"}}>
+                        <ul style={{"listStyleType": "none"}}>
                             <li><i className={cx("fas", "fa-shield-alt")}></i>&nbsp;Cam kết 100% chính hãng</li>
                             <li><i className={cx("fas", "fa-truck")}></i>&nbsp;Giao hàng dự kiến:<strong> Thứ 7 24/11 - Thứ 6 30/11</strong></li>
                             <li><i className={cx("fas", "fa-sync-alt")}></i>&nbsp;Sản phẩm này được đổi trả</li>
@@ -176,7 +146,7 @@ class DetailPage extends React.Component {
                                     <i></i>
                                 </label>
                             </a>
-                            <div class="collapse" id="collapseBody">
+                            <div className="collapse" id="collapseBody">
                                 <ul className={cx("nav", "flex-column")}>
                                     <li className={"sub-menu"}>
                                         <a className={"nav-link"} href={" "}>&gt;&nbsp;1</a>
@@ -195,7 +165,7 @@ class DetailPage extends React.Component {
                                     <i></i>
                                 </label>
                             </a>
-                            <div class="collapse" id="collapseHair">
+                            <div className="collapse" id="collapseHair">
                                 <ul className={cx("nav", "flex-column")}>
                                     <li className={"sub-menu"}>
                                         <a className={"nav-link"} href={" "}>&gt;&nbsp;1</a>
@@ -215,7 +185,7 @@ class DetailPage extends React.Component {
                             <div className={"guarantee-logo"}>
                                 <img src={require("./images/guarantee.jpg")} alt={"guarantee"} style={{"width": "130px", "height": "130px"}}/>
                             </div>
-                            <div className={"guarantee-info"} style={{"padding-left": "15px"}}>
+                            <div className={"guarantee-info"} style={{"paddingLeft": "15px"}}>
                                 <p>BẢO ĐẢM 100% CHÍNH HÃNG</p>
                                 <ul>
                                     <li>Leflair chỉ làm việc trực tiếp với các thương hiệu và nhà phân phối chính thức</li>

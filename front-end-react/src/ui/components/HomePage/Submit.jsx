@@ -2,9 +2,6 @@
 import cx from 'classnames';
 
 class Submit extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     render() {
         return (
