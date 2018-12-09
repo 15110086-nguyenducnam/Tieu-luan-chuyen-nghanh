@@ -35,7 +35,7 @@ class Event extends React.Component {
         let childern = [];
         for (let i=0; i< this.itemList.length; i+=4) {
             childern.push(
-                <div className={cx("row", "row-item")}>
+                <div key={i} className={cx("row", "row-item")}>
                     {this.createItem(this.itemList[i])}
                     {this.createItem(this.itemList[i+1])}
                     {this.createItem(this.itemList[i+2])}

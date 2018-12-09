@@ -4,20 +4,11 @@ import RightSizeDetail from './RightSizeDetail';
 import './style.css';
 
 class RightDetail extends React.Component {
-    constructor(props) {
-        super(props);
-        this.label = this.props.label;
-        this.name = this.props.name;
-        this.oldPrice = this.props.oldPrice;
-        this.price = this.props.price;
-        this.sizeList = this.props.sizeList
-    }
 
     render() {
         return (
             <React.Fragment>
-                <RightInfoDetail label={this.label} name={this.name} oldPrice={this.oldPrice} price={this.price} />
-                <RightSizeDetail sizeList={this.sizeList}/>
+                <RightInfoDetail label={this.props.label} name={this.props.name} oldPrice={this.props.oldPrice} price={this.props.price} />
             </React.Fragment>
         )
     }

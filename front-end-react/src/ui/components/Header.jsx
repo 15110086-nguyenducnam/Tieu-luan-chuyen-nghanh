@@ -1,9 +1,19 @@
 ﻿import React from 'react';
 import { Link } from "react-router-dom";
 import * as PATH from '../../constants/routeConstants';
+import ShoppingCart from './ShowShoppingCart/ShoppingCart';
 
-const Header = props => {
-    return (
+class Header extends React.Component{
+   state = {
+        ShowShoppingCart: true,
+    }
+    handleShow = () => {
+    this.setState({
+        ShowShoppingCart: !this.state.ShowShoppingCart
+    })
+    }
+    render(){
+        return (
         <div className="container" style={{marginTop:'5px'}}>
             <nav className="navbar navbar-expand-lg navbar-light">
                 <Link to={PATH.HOME_URL}>
@@ -28,11 +38,16 @@ const Header = props => {
                         <li className="nav-item">
                         <Link className="nav-link" to={PATH.REGISTER_URL}>Đăng ký</Link>
                         </li>
+                        <li>
+                            <button className="btn btn-success" onClick={this.handleShow}>Giỏ hàng</button>
+                            <ShoppingCart show={this.state.ShowShoppingCart}/>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
     );
+    }
 }
 
 export default Header;

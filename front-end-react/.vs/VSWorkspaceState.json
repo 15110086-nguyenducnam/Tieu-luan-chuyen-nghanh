@@ -3,13 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\constants",
     "\\src\\ui",
     "\\src\\ui\\components",
-    "\\src\\ui\\components\\FashionPage",
-    "\\src\\ui\\components\\HomePage",
-    "\\src\\ui\\containers",
+    "\\src\\ui\\components\\SalePage",
+    "\\src\\ui\\components\\ShowShoppingCart",
+    "\\src\\ui\\components\\UserPage",
     "\\src\\ui\\containers\\FashionPage"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\ui\\components\\ShowShoppingCart\\ShoppingCart.jsx",
   "PreviewInSolutionExplorer": false
 }

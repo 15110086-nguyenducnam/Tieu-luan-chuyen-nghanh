@@ -3,13 +3,14 @@ import {withRouter} from 'react-router-dom';
 import DetailComponent from '../../components/DetailPage/DetailPage';
 
 class DetailPage extends Component {
-    constructor(match, props) {
-        super(props)
+    constructor(props) {
+        super(props);
+        this.item_id = this.props.match.params.item_id;
     }
 
     render() {
         return (
-            <DetailComponent />
+            <DetailComponent item_id={this.item_id} />
         )
     }
 }

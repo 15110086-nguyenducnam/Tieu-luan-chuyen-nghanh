@@ -12,7 +12,7 @@ class Classify extends React.Component {
         items.map(
             (item, index) => {
                 children.push(
-                    <button class="form-control btn btn-outline-secondary mt-2" key={index}>{item}</button>
+                    <button className="form-control btn btn-outline-secondary mt-2" key={index}>{item}</button>
                 )
             }
         )

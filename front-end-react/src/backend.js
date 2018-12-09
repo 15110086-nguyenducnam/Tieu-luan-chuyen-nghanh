@@ -1,0 +1,1 @@
+export default 'https://gory-pirate-68036.herokuapp.com/api/v1'

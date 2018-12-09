@@ -11,37 +11,37 @@ class Category extends React.Component {
                 "id": 1,
                 "name": "Thời trang",
                 "img": "./images/thoitrang.jpg",
-                "url": "/sale/Fashion"
+                "url": "/sale/1"
             },
             {
                 "id": 2,
                 "name": "Túi xách & Giày dép",
                 "img": "./images/tuixach&giaydep.jpg",
-                "url": "/sale/Handbags&Shoes"
+                "url": "/sale/2"
             },
             {
                 "id": 3,
                 "name": "Phụ kiện",
                 "img": "./images/phukien.jpg",
-                "url": "/sale/accessories"
+                "url": "/sale/3"
             },
             {
                 "id": 4,
                 "name": "Sức khỏe & Làm đẹp",
                 "img": "./images/suckhoe&lamdep.jpg",
-                "url": "/sale/Health&Beauty"
+                "url": "/sale/4"
             },
             {
                 "id": 5,
                 "name": "Nhà cửa & Đời sống",
                 "img": "./images/nhacua&doisong.jpg",
-                "url": "/sale/Housing&Life"
+                "url": "/sale/5"
             },
             {
                 "id": 6,
                 "name": "Hàng nhập khẩu",
                 "img": "./images/hangnhapkhau.jpg",
-                "url": "/sale/ImportGoods"
+                "url": "/sale/6"
             }
         ]   
     }

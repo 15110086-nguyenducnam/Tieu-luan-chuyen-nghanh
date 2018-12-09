@@ -6,7 +6,6 @@ import './style.css'
 class Item extends React.Component {
     constructor(props){
         super(props);
-        this.itemList = this.props.items;
     }
 
     isExistSaleOff = (item) => {
@@ -27,22 +26,22 @@ class Item extends React.Component {
 
     createItem = () => {
         let children = []
-        this.itemList.map(
+        this.props.items.map(
             (item, index) => {
+                // <img src={item["photos"][1]['image_file_name']} className={"img-top"} alt={"Card Front"} />
                 children.push(
                     <div key={index} className={cx("col-md-4", "mt-3")}>
                         <div className={cx("card-product", "img-top")}>
-                            <img src={require(`${item["image1"]}`)} alt={"Card Back"} />
-                            <img src={require(`${item["image2"]}`)} className={"img-top"} alt={"Card Front"} />
+                        <img src={item["photos"][0]['image_file_name']} alt={"Card Back"} /> 
                             {this.isExistSaleOff(item)}
                         </div>
                         <div className={"card-body"}>
-                            <Link to={item["url"]} style={{color: "black"}}>
-                                <span>{item["label"]}</span>
-                                <p style={{"margin-bottom": "0"}}>{item["name"]}</p>
+                            <Link to={'/product/'+item['id']} style={{color: "black"}}>
+                                <span></span>
+                                <p style={{"marginBottom": "0"}}>{item["tensp"]}</p>
                             </Link>
                             {this.isExistOldPrice(item)}
-                            <span style={{"color": "blue", "font-size": "1.5em;"}}>{item["price"]}đ</span>
+                            <span style={{"color": "blue", "fontSize": "1.5em"}}>{item["gia"]}đ</span>
                         </div>
                     </div>
                 )
