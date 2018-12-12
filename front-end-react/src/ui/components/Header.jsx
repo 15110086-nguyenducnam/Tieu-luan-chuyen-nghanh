@@ -2,16 +2,52 @@
 import { Link } from "react-router-dom";
 import * as PATH from '../../constants/routeConstants';
 import ShoppingCart from './ShowShoppingCart/ShoppingCart';
+import {withRouter} from 'react-router-dom';
+import cx from 'classnames';
 
 class Header extends React.Component{
    state = {
         ShowShoppingCart: true,
     }
+
+
     handleShow = () => {
-    this.setState({
-        ShowShoppingCart: !this.state.ShowShoppingCart
-    })
+        this.setState({
+            ShowShoppingCart: !this.state.ShowShoppingCart
+        })
     }
+
+    logout = () => {
+        localStorage.removeItem('username');
+        localStorage.removeItem('token');
+        this.props.history.push(PATH.HOME_URL);
+    }
+
+    isLogin = () => {
+        if (localStorage.getItem('username') !== null) {
+            return (
+                <React.Fragment>
+                    <li className="nav-item">
+                        <p className="nav-link">Xin chào {localStorage.getItem('username')}</p>
+                    </li>
+                    <li className="nav-item">
+                        <button className={cx("btn", "btn-light")} style={{marginRight:'5px'}} onClick={this.logout}>Đăng xuất</button>
+                    </li>
+                </React.Fragment>
+            )
+        }
+        return (
+            <React.Fragment>
+                <li className="nav-item">
+                    <Link className="nav-link" to={PATH.LOGIN_URL}>Đăng nhập</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to={PATH.REGISTER_URL}>Đăng ký</Link>
+                </li>
+            </React.Fragment>
+        )
+    }
+
     render(){
         return (
         <div className="container" style={{marginTop:'5px'}}>
@@ -32,12 +68,7 @@ class Header extends React.Component{
                         </li>
                     </ul>
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
-                            <Link className="nav-link" to={PATH.LOGIN_URL}>Đăng nhập</Link>
-                        </li>
-                        <li className="nav-item">
-                        <Link className="nav-link" to={PATH.REGISTER_URL}>Đăng ký</Link>
-                        </li>
+                        {this.isLogin()}
                         <li>
                             <button className="btn btn-success" onClick={this.handleShow}>Giỏ hàng</button>
                             <ShoppingCart show={this.state.ShowShoppingCart}/>
@@ -50,4 +81,4 @@ class Header extends React.Component{
     }
 }
 
-export default Header;
+export default withRouter(Header);

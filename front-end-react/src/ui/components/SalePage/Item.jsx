@@ -25,9 +25,10 @@ class Item extends React.Component {
     }
 
     createItem = () => {
-        let children = []
+        let children = [];
         this.props.items.map(
             (item, index) => {
+                let gia = item['gia'] ? item['gia']['gia'] : 0;
                 // <img src={item["photos"][1]['image_file_name']} className={"img-top"} alt={"Card Front"} />
                 children.push(
                     <div key={index} className={cx("col-md-4", "mt-3")}>
@@ -41,7 +42,7 @@ class Item extends React.Component {
                                 <p style={{"marginBottom": "0"}}>{item["tensp"]}</p>
                             </Link>
                             {this.isExistOldPrice(item)}
-                            <span style={{"color": "blue", "fontSize": "1.5em"}}>{item["gia"]}đ</span>
+                            <span style={{"color": "blue", "fontSize": "1.5em"}}>{gia}đ</span>
                         </div>
                     </div>
                 )

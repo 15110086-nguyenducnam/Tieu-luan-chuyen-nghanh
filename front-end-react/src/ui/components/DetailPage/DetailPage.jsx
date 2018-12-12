@@ -33,7 +33,7 @@ class DetailPage extends React.Component {
     }
 
     componentDidMount() {
-        fetch(backendAPI+'/sanphams/'+this.item_id).then(
+        fetch(backendAPI+'/api/v1/sanphams/'+this.item_id).then(
             response => {
                 return response.json();
             }
@@ -65,8 +65,6 @@ class DetailPage extends React.Component {
                         <hr/>
                         <ul className={cx("flex-column", "nav", "nav-pills", "info-right")}>
                             <DetailedInformation name="THÔNG TIN SẢN PHẨM" collapse="collapseSkin" info={[1,2]} />
-                            <DetailedInformation name="CHẤT LIỆU & CÁCH SỬ DỤNG" collapse="collapseBody" info={[1,2]} />
-                            <DetailedInformation name="CHI TIẾT KÍCH CƠ" collapse="collapseHair" info={[1,2]} />
                         </ul>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ class SalePage extends React.Component {
     }
 
     componentDidMount() {
-        fetch(backendAPI+'/loaisps/'+this.category_id).then(
+        fetch(backendAPI+'/api/v1/loaisps/'+this.category_id).then(
             response => {
                 return response.json();
             }
