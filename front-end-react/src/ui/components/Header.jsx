@@ -1,20 +1,13 @@
 ﻿import React from 'react';
 import { Link } from "react-router-dom";
 import * as PATH from '../../constants/routeConstants';
-import ShoppingCart from './ShowShoppingCart/ShoppingCart';
 import {withRouter} from 'react-router-dom';
 import cx from 'classnames';
 
 class Header extends React.Component{
-   state = {
-        ShowShoppingCart: true,
-    }
 
-
-    handleShow = () => {
-        this.setState({
-            ShowShoppingCart: !this.state.ShowShoppingCart
-        })
+    constructor(props) {
+        super(props);
     }
 
     logout = () => {
@@ -70,8 +63,9 @@ class Header extends React.Component{
                     <ul className="navbar-nav ml-auto">
                         {this.isLogin()}
                         <li>
-                            <button className="btn btn-success" onClick={this.handleShow}>Giỏ hàng</button>
-                            <ShoppingCart show={this.state.ShowShoppingCart}/>
+                            <Link className="nav-link" to={PATH.CART_URL}>
+                                <button className="btn btn-success">Giỏ hàng</button>
+                            </Link>
                         </li>
                     </ul>
                 </div>

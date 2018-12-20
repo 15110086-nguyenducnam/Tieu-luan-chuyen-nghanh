@@ -11,23 +11,6 @@ class PromotionTime extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className={"pt-2"} style={{"marginLeft": "60px"}}>
-                    <p>Ưu đãi này sẽ kết thúc trong:</p>
-                    <div style={{"marginLeft": "15px"}}>
-                        <ul className={cx("list-inline", "count")}>
-                            <li className="list-inline-item">23</li>
-                            <li className="list-inline-item">14</li>
-                            <li className="list-inline-item">54</li>
-                            <li className="list-inline-item">12</li>
-                        </ul>
-                        <ul className={"list-inline"} style={{"marginTop": "-10px"}}>
-                            <li className="list-inline-item">Ngày</li>
-                            <li className="list-inline-item">Giờ</li>
-                            <li className="list-inline-item">Phút</li>
-                            <li className="list-inline-item">Giây</li>
-                        </ul>
-                    </div>
-                </div>
                 <div className={cx("icon-branch", "text-left")}>
                     <ul style={{"listStyleType": "none"}}>
                         <li><i className={cx("fas", "fa-shield-alt")}></i>&nbsp;Cam kết 100% chính hãng</li>

@@ -27,9 +27,12 @@ class DetailPage extends React.Component {
         this.state = {
             name: '',
             price: 0,
-            image: ''
+            image: '',
+            item: '',
+            alert: '',
         }
-        this.expected_delivery = "Thứ 7 24/11 - Thứ 6 30/11"
+        this.expected_delivery = "Thứ 7 26/12 - Thứ 6 30/12"
+        this.insertCart = this.insertCart.bind(this);
     }
 
     componentDidMount() {
@@ -42,10 +45,35 @@ class DetailPage extends React.Component {
                 this.setState({
                     name: data.sanpham.tensp,
                     price: data.sanpham.gia,
-                    image: data.sanpham.photos[0]['image_file_name']
+                    image: backendAPI+data.sanpham.photos[0]['image_file_name'],
+                    item: {name:data.sanpham.tensp, price: data.sanpham.gia.gia, image: backendAPI+data.sanpham.photos[0]['image_file_name']}
                 });
             }
         )
+    }
+
+    insertCart() {
+        let cart = JSON.parse(localStorage.getItem('cart'));
+        console.log(cart)
+        if (cart == null) {
+            cart = new Array();
+            cart.push({item: this.state.item, total: 1})
+            localStorage.setItem('cart', JSON.stringify(cart))
+        } else {
+            let isExist = false;
+            for (let element in cart) {
+                if (cart[element]['item']['name'] == this.state.item['name']) {
+                    cart[element]['total'] += 1;
+                    isExist = true;
+                    break;
+                }
+            }
+            if (!isExist) {
+                cart.push({item: this.state.item, total: 1})
+            }
+            localStorage.setItem('cart', JSON.stringify(cart))
+        }
+        this.setState({'alert': 'Thêm vào thành công'})
     }
 
     render() {
@@ -59,8 +87,9 @@ class DetailPage extends React.Component {
                     <div className="col-md-5">
                         <RightDetail label={this.label} name={this.state.name} oldPrice={this.oldPrice} price={this.state.price}/>
                         <div className={cx("add-button", "pt-4")}>
-                            <button className={cx("btn", "btn-primary")}>Thêm vào giỏ hàng</button>
+                            <button className={cx("btn", "btn-primary")} onClick={this.insertCart}>Thêm vào giỏ hàng</button>
                         </div>
+                        <p>{this.state.alert}</p>
                         <PromotionTime expected_delivery={this.expected_delivery}/>
                         <hr/>
                         <ul className={cx("flex-column", "nav", "nav-pills", "info-right")}>
@@ -72,11 +101,6 @@ class DetailPage extends React.Component {
                     <hr/>
                     <BottomDetail />
                     <br/>
-                </div>
-
-                <div className={cx("col", "text-center")}>
-                    <h3>Đã xem gần đây</h3>
-                    "BỎ CAROUSEL VÔ ĐÂY"
                 </div>
             </div>
         )

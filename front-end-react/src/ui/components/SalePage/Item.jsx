@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { Link } from "react-router-dom";
+import backendAPI from '../../../backend'
 import './style.css'
 
 class Item extends React.Component {
@@ -32,18 +33,17 @@ class Item extends React.Component {
                 // <img src={item["photos"][1]['image_file_name']} className={"img-top"} alt={"Card Front"} />
                 children.push(
                     <div key={index} className={cx("col-md-4", "mt-3")}>
-                        <div className={cx("card-product", "img-top")}>
-                        <img src={item["photos"][0]['image_file_name']} alt={"Card Back"} /> 
-                            {this.isExistSaleOff(item)}
-                        </div>
-                        <div className={"card-body"}>
-                            <Link to={'/product/'+item['id']} style={{color: "black"}}>
-                                <span></span>
+                        <Link to={'/product/'+item['id']} style={{color: "black"}}>
+                            <div className={cx("card-product", "img-top")}>
+                                <img src={backendAPI+item["photos"][0]['image_file_name']} alt={"Card Back"} /> 
+                                {this.isExistSaleOff(item)}
+                            </div>
+                            <div className={"card-body"}>
                                 <p style={{"marginBottom": "0"}}>{item["tensp"]}</p>
-                            </Link>
-                            {this.isExistOldPrice(item)}
+                                {this.isExistOldPrice(item)}
                             <span style={{"color": "blue", "fontSize": "1.5em"}}>{gia}đ</span>
                         </div>
+                        </Link>
                     </div>
                 )
             }

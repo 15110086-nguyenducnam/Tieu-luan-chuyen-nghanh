@@ -3,3 +3,9 @@
     z-index: 1000;
     transition: all 0.3s ease-in-out;
 }
+
+.image {
+    padding-bottom: 8px;
+    width: 187px;
+    margin: auto;
+}

@@ -12,7 +12,7 @@ class LeftDetail extends React.Component {
                     <img src={require(`${this.props.logo}`)} alt={"logo"}/>
                 </div>
                 <div className={cx("info", "pt-2")}>
-                    <p style={{"fontSize": "1.5em"}}>"{this.slogan}"</p>
+                    <p style={{"fontSize": "1.5em"}}>"{this.props.slogan}"</p>
                     <p>{this.props.description}</p>
                 </div>
             </React.Fragment>

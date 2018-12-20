@@ -27,7 +27,6 @@ class LoginPage extends React.Component {
     login(e) {
         e.preventDefault();
 
-
         let data = {
             'email': this.state.email,
             'password': this.state.password
