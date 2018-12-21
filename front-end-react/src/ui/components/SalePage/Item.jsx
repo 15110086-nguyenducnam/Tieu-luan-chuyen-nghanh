@@ -5,9 +5,6 @@ import backendAPI from '../../../backend'
 import './style.css'
 
 class Item extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     isExistSaleOff = (item) => {
         if (item['saleOff']) {
@@ -29,7 +26,7 @@ class Item extends React.Component {
         let children = [];
         this.props.items.map(
             (item, index) => {
-                let gia = item['gia'] ? item['gia']['gia'] : 0;
+                let gia = item['gia'] ? new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'vnd' }).format(item['gia']['gia']) : 0;
                 // <img src={item["photos"][1]['image_file_name']} className={"img-top"} alt={"Card Front"} />
                 children.push(
                     <div key={index} className={cx("col-md-4", "mt-3")}>
@@ -41,7 +38,7 @@ class Item extends React.Component {
                             <div className={"card-body"}>
                                 <p style={{"marginBottom": "0"}}>{item["tensp"]}</p>
                                 {this.isExistOldPrice(item)}
-                            <span style={{"color": "blue", "fontSize": "1.5em"}}>{gia}đ</span>
+                            <span style={{"color": "blue", "fontSize": "1.5em"}}>{gia}</span>
                         </div>
                         </Link>
                     </div>

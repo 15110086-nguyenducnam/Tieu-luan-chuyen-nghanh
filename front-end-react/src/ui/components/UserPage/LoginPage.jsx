@@ -42,8 +42,10 @@ class LoginPage extends React.Component {
         ).then(
             result => {
                 if (result['status'] == true) {
+                    console.log(result)
                     localStorage.setItem('username', `${result['khachhang']['ho']} ${result['khachhang']['ten']}`);
                     localStorage.setItem('token', result['khachhang']['api_key']['token']);
+                    localStorage.setItem('user_id', result['khachhang']['id']);
                     this.props.history.push(PATH.HOME_URL);
                 } else {
                     this.setState({'error': 'Tài khoản và mật khẩu không hợp lệ'})
@@ -63,13 +65,6 @@ class LoginPage extends React.Component {
                         </div>
                         <div className={"frame"}>
                             <form className={"form-login"}>
-                                <button className={cx("loginBtn", "loginBtn--facebook", "mt-2")}>
-                                    Đăng nhập bằng Facebook
-                                </button>
-                                <div className={"seperator"}>
-                                    <hr/>
-                                    <span className={"or-text"}>hoặc</span>
-                                </div>
                                 <div className={"form-group"}>
                                     <label htmlFor={"exampleInputEmail1"}>Địa chỉ email</label>
                                     <input type={"email"} className={"form-control"} id={"exampleInputEmail1"} aria-describedby={"emailHelp"}

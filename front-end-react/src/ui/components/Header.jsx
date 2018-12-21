@@ -6,10 +6,6 @@ import cx from 'classnames';
 
 class Header extends React.Component{
 
-    constructor(props) {
-        super(props);
-    }
-
     logout = () => {
         localStorage.removeItem('username');
         localStorage.removeItem('token');
@@ -63,7 +59,7 @@ class Header extends React.Component{
                     <ul className="navbar-nav ml-auto">
                         {this.isLogin()}
                         <li>
-                            <Link className="nav-link" to={PATH.CART_URL}>
+                            <Link className="nav-item" to={PATH.CART_URL}>
                                 <button className="btn btn-success">Giỏ hàng</button>
                             </Link>
                         </li>

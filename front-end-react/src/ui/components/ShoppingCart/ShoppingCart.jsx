@@ -3,6 +3,7 @@ import './style.css'
 import cx from 'classnames'
 import { Link } from "react-router-dom";
 import * as PATH from '../../../constants/routeConstants';
+import backendAPI from '../../../backend';
 
 class ShoppingCart extends React.Component { 
     constructor(props) {
@@ -21,6 +22,7 @@ class ShoppingCart extends React.Component {
         this.deleteItem = this.deleteItem.bind(this);
         this.addItem = this.addItem.bind(this);
         this.subItem = this.subItem.bind(this);
+        this.payAction = this.payAction.bind(this);
     }
 
     showLogin = () => {
@@ -31,15 +33,17 @@ class ShoppingCart extends React.Component {
                 </Link>
             )
         } else {
-            return (
-                <button className="btn">Thanh toán</button>
-            )
+            if (this.state.cart !== null) {
+                return (
+                    <button className="btn" onClick={this.payAction}>Thanh toán</button>
+                )
+            }
         }
     }
 
 
     componentDidMount() {
-        if (this.state.cart == null || this.state.cart.length == 0) {
+        if (this.state.cart === null || this.state.cart.length === 0) {
             this.setState(
                 {
                     alert: "Giỏ hàng bạn còn trống",
@@ -47,10 +51,7 @@ class ShoppingCart extends React.Component {
                 }
             );
         } else {
-            let total = 0;
-            for (let i = 0; i<this.state.cart.length; i++) {
-                total += (parseFloat(this.state.cart[i]['item']['price']) * parseInt(this.state.cart[i]['total']));
-            }
+            let total = this.getTotal(this.state.cart);
             total = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'vnd' }).format(total)
             this.setState({total:total});
         }
@@ -70,7 +71,7 @@ class ShoppingCart extends React.Component {
         let array = [...this.state.cart];
         array.splice(index, 1);
         let total = 0;
-        if (array.length == 0) {
+        if (array.length === 0) {
             localStorage.removeItem('cart');
         } else {
             localStorage.setItem('cart', JSON.stringify(array));
@@ -85,7 +86,7 @@ class ShoppingCart extends React.Component {
         let index = parseInt(e.target.id.slice(-1));
         let array = [...this.state.cart];
         let total = 0;
-        if (array[index]['total'] == 1) {
+        if (array[index]['total'] === 1) {
             return;
         } else {
             array[index]['total'] -= 1;
@@ -94,6 +95,32 @@ class ShoppingCart extends React.Component {
         total = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'vnd' }).format(total);
         localStorage.setItem('cart', JSON.stringify(array));
         this.setState({cart: array, total:total});
+    }
+
+    payAction(e) {
+        e.preventDefault();
+        let user_id = localStorage.getItem('user_id');
+        let token = localStorage.getItem('token');
+
+        for (let i = 0; i<this.state.cart.length; i++) {
+            let data = {
+                id_khachhang: user_id,
+                so_luong: this.state.cart[i]['total'],
+                don_gia: this.state.cart[i]['item']['price'],
+                id_sanpham: this.state.cart[i]['item']['id']
+            }
+            fetch(backendAPI+'/api/v1/donhangs/donhang', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Access-Token": token
+                },
+                body: JSON.stringify(data)
+            })
+        }
+        this.setState({cart:null, total: new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'vnd' }).format(0)})
+        localStorage.removeItem('cart');
+        this.setState({alert: "Tạo đơn hàng thành công"})
     }
 
     addItem(e) {
@@ -131,7 +158,7 @@ class ShoppingCart extends React.Component {
                                         -
                                     </button>
                                 </span>
-                                <input type="text" name="quant[1]" className={cx("form-control", "input-number")} value={this.state.cart[i]['total']} disabled="true"/>
+                                <input type="text" name="quant[1]" className={cx("form-control", "input-number")} value={this.state.cart[i]['total']} disabled={true}/>
                                 <span className="input-group-btn">
                                     <button id={`add${i}`} type="button" className={cx("btn", "btn-default", "btn-number")} data-type="plus" onClick={this.addItem}>
                                         +

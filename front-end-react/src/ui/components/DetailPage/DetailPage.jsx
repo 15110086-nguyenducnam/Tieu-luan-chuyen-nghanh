@@ -12,8 +12,14 @@ class DetailPage extends React.Component {
     constructor(props) {
         super(props);
         this.item_id = props.item_id;
+        this.state = {
+            id: '',
+            name: '',
+            price: 0,
+            image: '',
+            alert: '',
+        }
 
-        this.linkName = "Ưu đãi/ Guccii / Túi xách tay xanh"
         this.logo = "./images/logo-small.jpg"
         this.slogan = "Ngày mai đã là quá khứ từ giờ"
         this.description = "Guccii là tập đoàn thời trang thể thao đa quốc gia đến từ Đức, chuyên thiết kế và sản xuất\
@@ -24,13 +30,6 @@ class DetailPage extends React.Component {
         các siêu sao thể thao nổi tiếng nhất thế giới và đưa họ đến đỉnh cao vinh quang của những điều\
         tưởng như 'không thể'"
         this.label = "Guccii"
-        this.state = {
-            name: '',
-            price: 0,
-            image: '',
-            item: '',
-            alert: '',
-        }
         this.expected_delivery = "Thứ 7 26/12 - Thứ 6 30/12"
         this.insertCart = this.insertCart.bind(this);
     }
@@ -43,33 +42,40 @@ class DetailPage extends React.Component {
         ).then(
             data => {
                 this.setState({
+                    id: data.sanpham.id,
                     name: data.sanpham.tensp,
-                    price: data.sanpham.gia,
-                    image: backendAPI+data.sanpham.photos[0]['image_file_name'],
-                    item: {name:data.sanpham.tensp, price: data.sanpham.gia.gia, image: backendAPI+data.sanpham.photos[0]['image_file_name']}
+                    price: data.sanpham.gia.gia,
+                    image: backendAPI+data.sanpham.photos[0]['image_file_name']
                 });
             }
         )
     }
 
     insertCart() {
+        let item = {
+            id: this.state.id,
+            name: this.state.name, 
+            price: this.state.price, 
+            image: this.state.image
+        }
+
         let cart = JSON.parse(localStorage.getItem('cart'));
-        console.log(cart)
+
         if (cart == null) {
             cart = new Array();
-            cart.push({item: this.state.item, total: 1})
+            cart.push({item: item, total: 1})
             localStorage.setItem('cart', JSON.stringify(cart))
         } else {
             let isExist = false;
             for (let element in cart) {
-                if (cart[element]['item']['name'] == this.state.item['name']) {
+                if (cart[element]['item']['name'] == item['name']) {
                     cart[element]['total'] += 1;
                     isExist = true;
                     break;
                 }
             }
             if (!isExist) {
-                cart.push({item: this.state.item, total: 1})
+                cart.push({item: item, total: 1})
             }
             localStorage.setItem('cart', JSON.stringify(cart))
         }
@@ -79,13 +85,12 @@ class DetailPage extends React.Component {
     render() {
         return (
             <div className={"container"}>
-                <p>{this.linkName}</p>
                 <div className={cx("row", "mt-5")}>
                     <div className="col-md-7">
                         <LeftDetail image={this.state.image} logo={this.logo} description={this.description} slogan={this.slogan}/>
                     </div>
                     <div className="col-md-5">
-                        <RightDetail label={this.label} name={this.state.name} oldPrice={this.oldPrice} price={this.state.price}/>
+                        <RightDetail label={this.label} name={this.state.name} price={this.state.price}/>
                         <div className={cx("add-button", "pt-4")}>
                             <button className={cx("btn", "btn-primary")} onClick={this.insertCart}>Thêm vào giỏ hàng</button>
                         </div>

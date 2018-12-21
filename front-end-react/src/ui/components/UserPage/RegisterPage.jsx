@@ -80,7 +80,7 @@ class RegisterPage extends React.Component {
         }).then(
             response => response.json()
         ).then(result => {
-            if (result['status'] == true) {
+            if (result['status'] === true) {
                 alert("Đăng kí thành công");
                 this.props.history.push(PATH.HOME_URL);
             } else {
@@ -110,13 +110,6 @@ class RegisterPage extends React.Component {
                         </div>
                         <div className={"frame"}>
                             <form className={"form-login"}>
-                                <button className={cx("loginBtn", "loginBtn--facebook", "mt-2")}>
-                                    Tạo mới bằng Facebook
-                                </button>
-                                <div className={"seperator"}>
-                                    <hr/>
-                                    <span className={"or-text"}>hoặc</span>
-                                </div>
                                 <div className={"form-group"}>
                                     <label htmlFor={"exampleInputEmail1"}>Địa chỉ email</label>
                                     <input name={"email"} className={"form-control"} id={"exampleInputEmail1"} aria-describedby={"emailHelp"}
@@ -170,7 +163,7 @@ class RegisterPage extends React.Component {
                                 <button className={cx("btn", "btn-primary", "d-block", "mx-auto", "mt-3", "custom-btn")} onClick={this.register}>Tạo tài khoản mới</button>
                                 <div className={"text-center"}>
                                     <small id={"emailHelp"} className={cx("form-text", "text-muted", "mt-2")}>Bằng việc tiếp tục, bạn đồng ý với <a
-                                            href={"#"}>điều khoản sử dụng</a> của Leflair Vietnam
+                                            href={"https://support.leflair.vn/hc/vi/articles/214857097-%C4%90i%E1%BB%81u-kho%E1%BA%A3n-v%C3%A0-quy-%C4%91%E1%BB%8Bnh-chung"}>điều khoản sử dụng</a> của Leflair Vietnam
                                     </small>
                                     <p className={"pt-3"}>Bạn đã là thành viên?</p><Link to={PATH.LOGIN_URL}>Đăng nhập</Link>
                                 </div>
