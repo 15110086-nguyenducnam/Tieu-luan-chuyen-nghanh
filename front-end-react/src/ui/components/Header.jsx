@@ -54,7 +54,7 @@ class Header extends React.Component{
         <div className="container" style={{marginTop:'5px'}}>
             <nav className="navbar navbar-expand-lg navbar-light">
                 <Link to={PATH.HOME_URL}>
-                    <img src='./images/logo.png' style={{width:"50px", height:"70px"}}/>
+                    <img src='./images/logo.png' style={{width:"100px", height:"120px"}}/>
                 </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                     <span className="navbar-toggler-icon"></span>
