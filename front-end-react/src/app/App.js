@@ -10,6 +10,7 @@ import RegisterPageContainer from '../ui/containers/UserPage/RegisterPage';
 import SalePageContainer from '../ui/containers/SalePage/SalePage';
 import DetailPageContainer from '../ui/containers/DetailPage/DetailPage';
 import CartPageContainer from '../ui/containers/ShoppingCart/ShoppingCart';
+import SearchPageContainer from '../ui/containers/SearchPage/SearchPage';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
                     <Switch>
                         <Route path={PATH.LOGIN_URL} extact component={LoginPageContainer} />
                         <Route path={PATH.REGISTER_URL} extact component={RegisterPageContainer} />
+                        <Route path={PATH.SEARCH_URL} extact component={SearchPageContainer} />
                         <Route path={PATH.CART_URL} extact component={CartPageContainer} />
                         <Route path={PATH.SALE_URL} extact component={SalePageContainer} />
                         <Route path={PATH.PRODUCT_URL} extact component={DetailPageContainer} />

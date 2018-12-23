@@ -6,6 +6,18 @@ import cx from 'classnames';
 
 class Header extends React.Component{
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            search: ''
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
+    
+    handleChange(event) {
+        this.setState({ [event.target.name]: event.target.value});
+    }
+
     logout = () => {
         localStorage.removeItem('username');
         localStorage.removeItem('token');
@@ -51,8 +63,10 @@ class Header extends React.Component{
                     <ul className="navbar-nav">
                         <li className="nav-item" id="search_form">
                             <form className="form-inline">
-                                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name={'search'} onChange={this.handleChange} value={this.state.search}/>
+                                <Link className="nav-link" to={'/search/?q='+this.state.search} replace>
+                                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                </Link>
                             </form>
                         </li>
                     </ul>
